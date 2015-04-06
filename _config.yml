@@ -34,3 +34,4 @@ defaults:
     values:
       layout: "post"
       category: "essay"
+      disqus: "y"
