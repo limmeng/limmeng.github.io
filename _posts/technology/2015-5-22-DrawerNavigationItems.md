@@ -4,7 +4,7 @@ date: 2015-5-22 21:45
 layout: post
 category: technology
 ---
-先看一下希望实现的效果：
+先看一下希望实现的效果：  
 <img src="https://github.com/limmeng/limmeng.github.io/blob/master/images/posts/drawer_navigation.png" height="400" />  
 本来侧边栏的导航是用RecyclerView实现的，现在想分类不同的导航项，难道需要用很多个RecyclerView吗？显然这不是我们所期望的解决方法。  
 下面介绍的解决方法是由阅读 [The Google I/O 2014 Android App](https://github.com/limmeng/iosched "The Google I/O 2014 Android App") 的源码得来，阅读优质开源项目的源码是极佳的学习方法。  
