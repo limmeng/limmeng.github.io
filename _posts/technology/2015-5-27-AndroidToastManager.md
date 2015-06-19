@@ -1,5 +1,5 @@
 ---
-title: Android 实现Toast中断  
+title: Android 实现 Toast Manager  
 date: 2015-5-27 19:20
 layout: post
 category: technology
