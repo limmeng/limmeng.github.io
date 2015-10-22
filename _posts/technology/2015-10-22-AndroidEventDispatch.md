@@ -202,7 +202,6 @@ MainActivity:
 {% endhighlight %}   
 调试。快速点击自定义的Button，得到输出如下：  
 <img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch1.jpg" height="250"/>   
-<img src="../../images/posts/AndroidDispatch1.jpg" height="250"/>  
 然后我们分析这个事件分发流程。  
 >首先：  
 >对View中的`dispatchTouchEvent`，返回`true`代表事件被该View处理了，否则返回`false`。  
@@ -210,17 +209,19 @@ MainActivity:
 >只有ViewGroup中才有`onInterceptTouchEvent`，返回`true`代表拦截当前事件，返回`false`继续往子View分发。  
 
 当我们将LinearLayout中的`onInterceptTouchEvent`返回值设为`true`时，输出如下：  
+
 <img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch2.png" height="150"/>   
-<img src="../../images/posts/AndroidDispatch2.png" height="150"/>  
+
 当我们将Button中`onTouchEvent`返回值设为false时，输出如下：  
-<img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch3.png" height="250"/>   
-<img src="../../images/posts/AndroidDispatch3.png" height="250"/>  
+
+<img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch3.png" height="250"/>    
+
 当我们将Button中`onTouchEvent`返回值设为false，并将LinearLayout中`onTouchEvent`返回值设为true时，输出如下：  
-<img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch4.png" height="250"/>   
-<img src="../../images/posts/AndroidDispatch4.png" height="250"/>  
+ 
+<img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidDispatch4.png" height="250"/>    
+
 总结一下：touch事件的分发如下图（事件没被消耗的情况就没有标出了，所有onTouchEvent都返回false就未消耗）：  
 <img src="https://github.com/limmeng/limmeng.github.io/raw/master/images/posts/AndroidEventDispatch.jpg" height="750"/>   
-<img src="../../images/posts/AndroidEventDispatch.jpg" height="750"/>  
 
 ##分析：
 下面从源码的角度分析一下具体的分发过程。  
