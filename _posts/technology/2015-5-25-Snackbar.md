@@ -21,7 +21,7 @@ category: technology
 下面对功能的实现进行分析：  
 Snackbar需要继承某个ViewGroup，选择继承LinearLayout，然后重写onMeasure函数，以保证我们的Snackbar能正常设置layout_ width及layout_ height等参数。在实现时，由于Snackbar在手机和平板上显示时长宽的要求不一样，所以使用一个SnackbarLayout继承LinearLayout，Snackbar继承SnackbarLayout，在SnackbarLayout中重写onMeasure，并提供可以改变onMeasure尺寸的接口，在Snackbar中使用该接口控制显示尺寸。以下代码仅实现Snackbar在手机上的显示。  
 先给出SnackbarLayout的代码：  
-{% highlight java %}  
+{% highlight java linenos %}  
 	// SnackbarLayout.java
 	public class SnackbarLayout extends LinearLayout {
 	    private int maxWidth = Integer.MAX_VALUE;
@@ -69,7 +69,7 @@ Snackbar需要继承某个ViewGroup，选择继承LinearLayout，然后重写onM
 	}
 {% endhighlight %}  
 实现Snackbar上的Action点击按钮以及不同阶段的事件回调，需要提供两个接口：    
-{% highlight java %}  
+{% highlight java linenos %}  
 	// ActionClickListener.java
 	public interface ActionClickListener {
 	    void onActionClicked(Snackbar snackbar);
