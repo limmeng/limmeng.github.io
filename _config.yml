@@ -13,6 +13,8 @@ links:
     url:          /essay
   - name:         技术
     url:          /technology
+  - name:         游戏
+    url:          /game
   - name:         关于
     url:          /about
 highlighter:      pygments
@@ -24,6 +26,10 @@ redcarpet:
 excerpt_separator: ""
 
 timezone: Asia/Shanghai
+
+# pagination
+paginate: 15
+paginate_path: "/page:num/"
 
 # default settings
 defaults:

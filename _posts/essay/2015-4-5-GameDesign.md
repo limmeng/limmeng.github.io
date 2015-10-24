@@ -2,6 +2,7 @@
 layout: post
 title: 游戏设计饼干渣（1）
 date: 2015-4-5 18:42
+category: game
 disqus: y
 ---
 这个系列用来记录自己关于游戏设计的一些思考:)

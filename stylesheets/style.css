@@ -360,3 +360,9 @@ img {
   margin-left: -340px; }
 .paging .right {
   margin-left: 320px; }
+
+.pagination {
+  margin: 0 auto;
+  width: 50%;
+  text-align: center;
+}
